@@ -2,11 +2,11 @@
 
 
 <h2>Students</h2>
+gfdg
 
-<ul>
+<ul>  
   {% for person in persons %}
     <img src="{{ person.avatar }}">
-
     <li style="background-color:{{ person.fav_color }} "><img href="/student/{{ person.id }}">{{ person.avatar }}</img></li>
   {% endfor %}
   
