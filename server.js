@@ -41,6 +41,20 @@ app.set('views', './views')
 // Zorg dat werken met request data makkelijker wordt
 app.use(express.urlencoded({extended: true}))
 
+//new 
+let messages=[]
+app.get('/berichten',async function (request, response) {
+  response.render('messages.liquid',{messages: messages})
+  
+})
+app.post('/berichten',async function (request, response) {
+  console.log(request.body)
+  messages.push(request.body.textje)
+  response.redirect(303,'/berichten')
+  
+})
+
+
 
 // Om Views weer te geven, heb je Routes nodig
 // Maak een GET route voor de index
